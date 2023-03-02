@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form>
+            <input type="text" placeholder="Enter  number 1" id="num1" required/>
+            <br>
+            <input type="text" placeholder="Enter  number 2" id="num2" required/>
+            <p id="result" style="color: blue;"> Result displays here </p>
+            <button type="button" onclick="calc('+')"> Addition  </button> &nbsp;
+            <button type="button" onclick="calc('-')"> Subraction  </button> &nbsp;
+            <button type="button" onclick="calc('*')"> Multiplication  </button> &nbsp;
+            <button type="button" onclick="calc('/')"> Division  </button> &nbsp;
+        </form>
+        <script>
+                function calc(operation){
+                   var num1Value =  document.getElementById('num1').value;
+                   var num2Value =  document.getElementById('num2').value;
+                    var retFlag = false;
+                   if(num1Value.trim()==''){
+                    alert('Number 1 should not be blank');
+                    retFlag=true;
+                   }
+
+                   if(num2Value.trim()==''){
+                    alert('Number 2 should not be blank');
+                    retFlag=true;
+                   }
+
+                   if(retFlag){
+                    return false;
+                   }
+
+                        var num1 = parseInt(num1Value);
+                        var num2 = parseInt(num2Value);
+                        var resultId = document.getElementById("result");
+                        switch(operation){
+                            case '+': resultId.innerHTML=num1+num2;
+                            return; 
+                            case '-': resultId.innerHTML=num1-num2;
+                            return; 
+                            case '/': resultId.innerHTML=num1/num2;
+                            return; 
+                            case '*': resultId.innerHTML=num1*num2;
+                            return; 
+                            default: resultId.innerHTML="Invalid Input...";
+                        }
+                }
+        </script>
+    </body>
+</html>

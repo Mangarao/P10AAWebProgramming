@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="hidden" id="flag" value="off"/>
+    <img id="myImage" src="images\bulb_off.gif"  alt="Bulb off image"/> <br/>
+    <button onclick="document.getElementById('flag').value='on'; document.getElementById('myImage').src='images/bulb_on.gif';"> Bulb On </button> &nbsp;
+    <button onclick="document.getElementById('flag').value='off';document.getElementById('myImage').src='images/bulb_off.gif'"> Bulb off </button> &nbsp;
+    <button onclick="toggleBulb()"> Toggle Button </button> 
+
+    <script>
+        
+        function toggleBulb(){
+            var flag=document.getElementById('flag');
+            if(flag.value=='off'){
+                document.getElementById('myImage').src='images/bulb_on.gif';
+                flag.value='on';
+            }else{
+                document.getElementById('myImage').src='images/bulb_off.gif'
+                flag.value='off';
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -5,21 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registration screen</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
     </head>
     <body>
         <h1>
             Registration Form
         </h1>
-        <form action="https://w3schools.com/action_page.php" method="get">
+        <form  action="https://w3schools.com/action_page.php" method="get">
 
-            <label for="firstName">
+            <label for="firstName" class="form-label">
                 First Name
             </label>
-            <input type="text" name="fname" required/>
+            <input type="text" name="fname" class="form-control" required/>
             <br>
-            <label for="lastName">Last Name
+            <label for="lastName" class="form-label">Last Name
             </label>
-            <input type="text" name="lname"/><br>
+            <input type="text" name="lname" class="form-control"/><br>
             <label for="gender">Gender:
             </label>
             Male:
@@ -36,7 +37,7 @@
             <label for="skill">
                 Skills:
             </label>
-            <select multiple name="skill" required>
+            <select multiple name="skill" required class="form-select">
                 <option selected>Java</option>
                 <option>.Net</option>
                 <option>PHP</option>
@@ -50,6 +51,44 @@
             &nbsp; &nbsp;
             <input type="reset" value="Reset"/>
         </form>
+        <script>
+    function calc(num1, num2, operation){
 
+        if(operation=='sum'){
+            return num1+num2;
+        }else if(operation=='sub'){
+            return num1-num2;
+        } 
+        //write for other operations: multiplication, division and modulus
+
+
+    }
+
+             console.log("sub: "+calc(10,20,'sub'));
+             console.log("sum: "+calc(200,100, 'sum'));
+
+
+
+
+           // alert("hello, Welcome to Javascript");
+            // console.log("This is console message printed from registration page");
+            // document.write("hello, welcome");
+
+            
+
+
+
+            // window.onload = (event) =>  {
+            //     console.log("Onload event performed");
+            //     var nums=[1,2,3,4,5,6,7,8,9,10];
+            //      for(var i=0; i<nums.length; i++){
+            //         console.log(nums[i]);
+            //      }
+
+            //  //    nums.forEach(console.log);
+
+
+            //}
+        </script>
     </body>
 </html>

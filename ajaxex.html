@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+Backend output displays here...
+</div>
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<div>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://10.143.191.16:8888/BackendService/welcome.jsp", true);
+  //xhttp.open("GET", "http://10.143.191.16:8888/BackendService/myservlet", true);
+  xhttp.send();
+}
+
+
+</script>
+
+<script src="js/es6practice.js"> </script>
+
+</body>
+</html>

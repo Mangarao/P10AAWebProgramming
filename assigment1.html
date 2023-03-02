@@ -1,0 +1,18 @@
+
+<form>
+    <label> Text Field</label> <input type="text" id="mytextId" /> <br>
+    <label> Skill </label> 
+    <select onchange="myFun()" multiple>
+        <option >Java</option>
+        <option selected>.Net</option>
+        <option>Salesforce</option>
+    </select>
+</form>
+
+
+
+<script>
+   function myFun(){
+    document.getElementById("mytextId").disabled=true;
+   }
+</script>

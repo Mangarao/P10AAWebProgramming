@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>To do list of Manga</h1>
+    <form>
+        <label for="text-field">Enter your to do item:</label>
+        <input type="text" id="text-field">
+        <button type="submit">Add</button>
+        <button type="reset">Reset</button>
+    </form>
+    <ul id="to-do-list">
+  
+
+    </ul>
+
+    <script>
+        var toDoList = document.getElementById("to-do-list");
+        var form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                //read todo item from Text field
+                const textField = document.getElementById('text-field');
+                //create list element dynamically
+                const listItem = document.createElement('li');
+                //add todo item content to the list element
+                listItem.textContent = textField.value;
+                //create delete button dynamically
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                //add delete button to list element
+                listItem.appendChild(deleteButton);
+                //add list element to unordered list element
+                toDoList.appendChild(listItem);
+                
+            });
+
+
+        toDoList.addEventListener('click', function (event) {
+                if (event.target.tagName === 'BUTTON') {
+                    const listItem = event.target.parentNode;
+                    listItem.remove();
+                }
+            });
+
+    </script>
+    
+</body>
+</html>

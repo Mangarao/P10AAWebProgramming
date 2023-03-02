@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish page</title>
+</head>
+<body>
+    
+    <form>
+        <p id="displayId"> output displys here...</p>
+        <input type="text" placeholder="Enter your name" id="uid"/> <br>
+        <input type="button" onclick=" wishUser()" value="Wish"/>  
+
+    </form>
+
+    <script>
+        function wishUser(){
+         var uname=   document.getElementById("uid").value;
+         var message = "Advance Happy Holi, <b style='color:blue'>"+uname+"</b>";
+         document.getElementById("displayId").innerHTML=message;
+         //return false;
+        }
+
+    </script>
+</body>
+</html>

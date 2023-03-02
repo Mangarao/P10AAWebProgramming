@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+      /* Default styles */
+      form {
+        border: 1px solid black;
+        background-color: lightgray;
+        margin: 10px auto;
+        max-width: 500px;
+        padding: 10px;
+      }
+      input[type="text"] {
+        border: 1px solid black;
+        background-color: white;
+        padding: 5px;
+        width: 80%;
+      }
+      /* button[type="submit"],
+      button[type="reset"] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin-left: 5px;
+        padding: 10px;
+      } */
+      ul {
+        list-style: none;
+        margin: 10px auto;
+        max-width: 500px;
+        padding: 0;
+      }
+      li {
+        border: 1px solid black;
+        margin-bottom: 5px;
+        padding: 10px;
+        position: relative;
+      }
+      button {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+
+      /* Responsive styles */
+      @media screen and (max-width: 500px) {
+        form, ul {
+          max-width: 100%;
+        }
+        input[type="text"] {
+          width: 70%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <form>
+      <label for="text-field">Enter a new to-do:</label>
+      <input type="text" id="text-field"><br>
+      <button type="submit">Add</button> <br><br> <br><br> <br><br>
+      
+    </form>
+    <ul id="to-do-list"></ul>
+    <script>
+      const form = document.querySelector('form');
+      const toDoList = document.querySelector('#to-do-list');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const textField = document.querySelector('#text-field');
+        const listItem = document.createElement('li');
+        listItem.textContent = textField.value;
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        listItem.appendChild(deleteButton);
+        toDoList.appendChild(listItem);
+      });
+      toDoList.addEventListener('click', function (event) {
+        if (event.target.tagName === 'BUTTON') {
+          const listItem = event.target.parentNode;
+          listItem.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
